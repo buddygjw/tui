@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gbk" />
+        <title>模拟下拉菜单</title>
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/global/merge.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/select.css" />
+        <style type="text/css">
+        .mag { margin:20px; }
+        
+        /*.tui-select {
+            position:relative;
+            color:#666;
+        }
+        .tui-select .s-text {
+            border-right:0;
+            border-radius:0;
+            width:100px;
+        }
+        .tui-select .s-text:focus {
+            border:1px solid #bdc7d8;
+            border-right:0;
+            box-shadow:0 0 0 ;
+        }
+        .tui-select .s-arrow {
+            display:inline-block;
+            height:16px;
+            width:15px;
+            padding:3px 3px 3px 0;
+            border:1px solid #bdc7d8;
+            border-left:0;
+            vertical-align:middle;
+            background:url("http://img.china.alibaba.com/cms/upload/2012/344/994/499443_133354742.png") no-repeat 0 center;
+        }
+        
+        .tui-select .pull-down {
+            position:absolute;
+            top:19px;
+            left:0;
+            min-width:124px;
+            border:1px solid #bdc7d8;
+            background-color:#fff;
+            display:none;
+        }
+        .tui-select .pull-down .item {
+            border-bottom:1px dotted #dcdcdc;
+            padding:3px 0;
+        }
+        .tui-select .pull-down .item.last {
+            border-bottom:0;
+        }
+        .tui-select .pull-down .item dt {
+            float:left;
+            width:50px;
+            font-weight:bold;
+            padding-left:3px;
+        }
+        .tui-select .pull-down .item dd {
+            padding:0 3px 0 53px;
+            word-break:keep-all;
+            cursor:pointer;
+        }
+        .tui-select .pull-down .item dd:hover {
+            background-color:#e2e6ee;
+        }
+        
+        .tui-select .pull-down li {
+            line-height:22px;
+            word-break:keep-all;
+            cursor:pointer;
+            padding:0 3px;
+        }
+        .tui-select .pull-down li:hover {
+            background-color:#e2e6ee;
+        }
+        .tui-select .pull-down li.gray {
+            color:#a2a2a2;
+        }*/
+        </style>
+    </head>
+    <body>
+        <div class="mag">
+            <span id="select-1st" class="tui-select"><input class="s-text" readonly="readonly" placeholder="选择交易排序方式" type="text" /><i class="s-arrow"></i>
+                <input class="s-value" type="hidden" />
+                <div class="pull-down">
+                    <dl class="item">
+                        <dt>近7天</dt>
+                        <dd data-val="1" data-text="近7天交易额1">交易额1</dd>
+                        <dd data-val="2" data-text="近7天交易额2">交易额2</dd>
+                        <dd data-val="3" data-text="近7天交易额3">交易额3</dd>
+                    </dl>
+                    <dl class="item last">
+                        <dt data-val="">近30天</dt>
+                        <dd data-val="4" data-text="近30天交易额1">交易额</dd>
+                        <dd data-val="5" data-text="近30天交易额2">交易额</dd>
+                        <dd data-val="6" data-text="近30天交易额3">交易额</dd>
+                    </dl>
+                </div>
+            </span>
+            
+            <span id="select-2nd" class="tui-select"><input class="s-text" readonly="readonly" placeholder="归类到" type="text" /><i class="s-arrow"></i>
+                <input class="s-value" type="hidden" />
+                <ul class="pull-down">
+                    <li class="gray" data-val="" data-text="未分类">未分类（1000）</li>
+                    <li data-val="11" data-text="分类名称11">分类名称11（<em class="red">100</em>）</li>
+                    <li data-val="22" data-text="分类名称22">分类名称22（<em class="red">100</em>）</li>
+                    <li data-val="33" data-text="分类名称33">分类名称33（<em class="red">100</em>）</li>
+                </ul>
+            </span>
+        </div>
+        
+        <div class="mag">
+            <select>
+                <option>测试测试</option>
+            </select>
+        </div>
+        
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/elf/global/merge.js"></script>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/widget/select.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                new FE.tools.Select('#select-1st', {
+                    optionEl: 'dd',
+                    dataText: 'text',
+                    beforeShow: function(el){
+                        console.log(el);
+                        console.log(11);
+                    },
+                    selected: function(el, selectedEl){
+                        console.log(selectedEl);
+                    }
+                });
+                
+                new FE.tools.Select('#select-2nd', {
+                    dataText: 'text'
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="gbk" />
+        <title>示例-信息补全</title>
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/global/merge.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/suggestion-v2.css" />
+        <style type="text/css">
+        .marg { margin:20px;}
+        </style>
+    </head>
+    <body>
+        <div class="marg">
+            <input id="sgs-series-name" type="text" />
+            <input type="hidden" id="sgs-series-id" />
+        </div>
+        <div class="marg">
+            <input id="sgs-series-name-1" type="text" />
+            <input type="hidden" id="sgs-series-id-1" />
+            <input id="sgs-series-topic" type="text" />
+            <input type="hidden" id="sgs-topic-id" />
+        </div>
+        <div class="marg">
+            <div class="tui-suggestion">
+                <dl class="list-sugg">
+                    <dt>普通专场</dt>
+                    <dd><span class="txt">专场普通名称专场名称专场名称专场名称</span></dd>
+                    <dd><span class="txt">专场vip名称专场名称专场名称专场名称</span></dd>
+                    <dd class="last"><span class="txt">专场vip名称专场名称专场名称专场名称</span></dd>
+                </dl>
+                <dl class="list-sugg">
+                    <dt>vip专场</dt>
+                    <dd><span class="txt">专场普通名称专场名称专场名称专场名称</span></dd>
+                    <dd><span class="txt">专场vip名称专场名称专场名称专场名称</span></dd>
+                    <dd class="last"><span class="txt">专场vip名称专场名称专场名称专场名称</span></dd>
+                </dl>
+                <dl class="list-sugg">
+                    <dt>卖家专场</dt>
+                    <dd><span class="txt">专场普通名称专场名称专场名称专场名称</span></dd>
+                    <dd><span class="txt">专场vip名称专场名称专场名称专场名称</span></dd>
+                    <dd class="last"><span class="txt">专场vip名称专场名称专场名称专场名称</span></dd>
+                </dl>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/elf/global/merge.js"></script>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/widget/suggestion-v2.js"></script>
+        <script type="text/javascript">
+        jQuery(function($){
+            new FE.tools.Suggestion('#sgs-series-name', {
+                //url: 'http://elf-dev.alibaba-inc.com:9001/enroll/v2012/topic_series.json',
+                url: 'http://elf-test.china.alibaba-inc.com:41100/enroll/v2012/topic_series.json',
+                //url: 'http://wd.alibaba-inc.com/jsonp/55724/1',
+                data: {'type':'1'},
+                paramName: 'seriesName',
+                valInput: '#sgs-series-id',
+                //tempPrefix: '<dd data-val="">选择所有</dd>',
+                isDefaultItem: false
+            });
+            
+            /*联动从这里开始*/
+            var seriesId=$('#sgs-series-id-1').val();
+            $('#sgs-series-name-1').change(function(){
+                $('#sgs-series-topic').val('');
+                $('#sgs-topic-id').val('');
+            });
+            new FE.tools.Suggestion('#sgs-series-name-1', {
+                url: 'http://elf-test.china.alibaba-inc.com:41100/enroll/v2012/topic_series.json',
+                data: {'type':'1'},
+                paramName: 'seriesName',
+                valInput: '#sgs-series-id-1',
+                complete: function(){
+                    seriesId = $('#sgs-series-id-1').val();
+                    sgs.setConfig({
+                        data:{'type':'2', 'seriesId':seriesId}
+                    });
+                }
+            });
+            var sgs = new FE.tools.Suggestion('#sgs-series-topic', {
+                url: 'http://elf-test.china.alibaba-inc.com:41100/enroll/v2012/topic_series.json',
+                data: {'type':'2', 'seriesId':seriesId},
+                paramName: 'topicName',
+                valInput: '#sgs-topic-id'
+            });
+            
+            console.log('aaaaa'.replace(null, 'bb'));
+            /*结束*/
+            /*
+                <dl class="list-sugg">
+                    <% for (var item in $data) { %>
+                    <dt><%=$data[item].seriesTypeName %></dt>
+                    <% for (var pre in $data[item]['list']) { %>
+                    <dd data-val="<%=pre %>"><span class="txt">$data[item]['list'][pre]</span></dd>
+                    <% } } %>
+                </dl>
+            */
+        });
+        </script>
+    </body>
+</html>

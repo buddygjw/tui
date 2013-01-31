@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gbk" />
+        <title>弹出层</title>
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/global/merge.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/dialog.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/tui-icon.css" />
+    </head>
+    <body style="margin:20px;">
+        <div class="dialog-basic" id="dialog-demo-1st" style="display:block">
+            <div class="dialog-b">
+                <header>
+                    <a href="#" class="close">关闭</a>
+                    <h5>DIALOG提示主题</h5>
+                </header>
+                <section>
+                    可以写任何HTML代码
+                </section>
+                <footer>
+                    <button type="button" class="btn-basic btn-blue mg-16">确 定</button>
+                    <button type="button" class="btn-basic btn-gray btn-cancel">取 消</button>
+                </footer>
+            </div>
+        </div>
+        
+        <p style="height:50px;"></p>
+        
+        <div class="dialog-basic" id="dialog-demo-1st" style="display:block">
+            <div class="dialog-b">
+                <header>
+                    <a href="#" class="close">关闭</a>
+                    <h5>DIALOG提示主题</h5>
+                </header>
+                <section class="only-txt">
+                    只有文本内容
+                </section>
+                <footer>
+                    <button type="button" class="btn-basic btn-blue mg-16">确 定</button>
+                    <button type="button" class="btn-basic btn-gray btn-cancel">取 消</button>
+                </footer>
+            </div>
+        </div>
+        
+        <p style="height:50px;"></p>
+        
+        <div class="dialog-basic small" style="display:inline-block">
+            <div class="dialog-b">
+                <section class="simple">
+                    <i class="tui-icon-36 icon-success"></i>
+                    <div class="msg">操作成功</div>
+                </section>
+            </div>
+        </div>
+        
+        <p style="height:50px;"></p>
+        
+        <div class="dialog-basic small" style="display:inline-block">
+            <div class="dialog-b">
+                <section class="simple">
+                    <i class="tui-icon-36 icon-message"></i>
+                    <div class="msg">操作提醒，温馨提示</div>
+                </section>
+            </div>
+        </div>
+        
+        <p style="height:50px;"></p>
+        
+        <div class="dialog-basic small" style="display:inline-block">
+            <div class="dialog-b">
+                <section class="simple">
+                    <i class="tui-icon-36 icon-warning"></i>
+                    <div class="msg">操作警告，您无权操作</div>
+                </section>
+            </div>
+        </div>
+        
+        <p style="height:50px;"></p>
+        
+        <div class="dialog-basic small" style="display:inline-block">
+            <div class="dialog-b">
+                <section class="simple">
+                    <i class="tui-icon-36 icon-question"></i>
+                    <div class="msg">操作提醒，询问</div>
+                </section>
+            </div>
+        </div>
+        
+        <p style="height:50px;"></p>
+        
+        <div class="dialog-basic small" style="display:inline-block">
+            <div class="dialog-b">
+                <section class="simple">
+                    <i class="tui-icon-36 icon-fail"></i>
+                    <div class="msg">操作失败</div>
+                </section>
+            </div>
+        </div>
+        
+        
+        <p style="height:50px;"></p>
+        
+        <div class="dialog-basic small" id="test" style="display:inline-block">
+            <div class="dialog-b">
+                <section class="simple">
+                    <i class="tui-icon-36 icon-l-arrow"></i>
+                    <div class="msg">请选择模版</div>
+                </section>
+            </div>
+        </div>
+        
+        <p style="height:50px;"></p>
+        
+        <div class="dialog-basic normal" style="display:inline-block">
+            <div class="dialog-b">
+                <section class="simple">
+                    <i class="icon-success"></i>
+                    <div class="msg">
+                        <p>保存成功！</p>
+                        <dl>
+                            <dt>请确保你的填写无误，接下来您可以：</dt>
+                            <dd>1：点击下一步操作</dd>
+                        </dl>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/elf/global/merge.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                /*$.use('ui-dialog', function(){
+                    //如有多个浮出层，请另加ID或class
+                    var dialog = $('#dialog-demo-1st').dialog({
+                        center: true,
+                        fixed:true
+                    });
+                    $('#dialog-demo-1st .btn-cancel, #dialog-demo-1st .close').click(function(){
+                        dialog.dialog('close');
+                    });
+                });*/
+                
+                $.use('ui-dialog', function(){
+                    var dialog = $('#test').dialog({
+                        modal: false,
+                        fixed: true,
+                        center: true,
+                        timeout: 3000
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

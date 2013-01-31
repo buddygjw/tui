@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="gbk" />
+        <title>form表单示例</title>
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/global/merge.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/form.css" />
+        <style type="text/css">
+        .marg { margin:20px;}
+        </style>
+    </head>
+    <body>
+        <div class="marg">
+        <!--  cf上的文档内容
+        h1. 简易搜索框
+
+h5. HTML代码，详细说明请见注释
+{code:html}
+<link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/form.css" />
+            <span class="tui-search-s">
+                <!-- input 和 button 不允许有任何形式的间隙(如空格、换行等) ->
+                <!-- input框的宽度允许根据实际情况调整 ->
+                <input type="text" /><button type="button" class="btn-basic btn-gray">搜索</button>
+            </span>
+{code}
+
+h5. 效果图
+
+!35.png|border=0!
+
+        -->
+            <style type="text/css">
+            
+/*简易搜索输入框*/
+.tui-search-s input[type=text] {
+    border:1px solid #a3a3a3;
+    box-shadow:none;
+}
+.tui-search-s .btn-gray {
+    border-radius:0 2px 2px 0;
+    border-left:0;
+    padding:0 6px;
+}
+            </style>
+            <select>
+                <option>下拉框</option>
+            </select>
+            <span class="tui-search-s">
+                <input type="text" /><button type="button" class="btn-basic btn-gray">搜索</button>
+            </span>
+        </div>
+        <div class="form-vertical">
+            <dl class="item-form">
+                <dt class="topic must-fill">活动名称：</dt>
+                <dd>
+                    <input type="text" value="" />
+                </dd>
+                <dd>
+                    <span class="validator-tip validator-error">错误验证提示框</span>
+                </dd>
+            </dl>
+            
+            <dl class="item-form">
+                <dt class="topic must-fill">页面URL：</dt>
+                <dd>
+                    <span>http://view.china.alibaba.com/cms/info/</span> <input type="text" />
+                    <p class="explain">请使用形如“promotion/fw/2007/05/index.html”的url</p>
+                </dd>
+                <dd>
+                    <span class="validator-tip validator-error">错误验证提示框</span>
+                </dd>
+            </dl>
+            
+            <dl class="item-form">
+                <dt class="topic">页面布局：</dt>
+                <dd>
+                    <ul class="list fd-clr">
+                        <li>
+                            <img src="http://fd.aliued.cn/i/100-100.png" />
+                            <label><input type="radio" /> 1号布局</label>
+                        </li>
+                        <li>
+                            <img src="http://fd.aliued.cn/i/100-100.png" />
+                            <label><input type="radio" /> 2号布局</label>
+                        </li>
+                        <li>
+                            <img src="http://fd.aliued.cn/i/100-100.png" />
+                            <label><input type="radio" /> 3号布局</label>
+                        </li>
+                        <li>
+                            <img src="http://fd.aliued.cn/i/100-100.png" />
+                            <label><input type="radio" /> 4号布局</label>
+                        </li>
+                        <li>
+                            <img src="http://fd.aliued.cn/i/100-100.png" />
+                            <label><input type="radio" /> 5号布局</label>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            
+            <dl class="item-form item-operate">
+                <dt class="topic">Banner尺寸：</dt>
+                <dd>
+                    <input type="text" />
+                    <label>投放的url位置：</label>
+                    <input type="text" />
+                    <a href="#" class="icon-admm icon-add">增加</a>
+                    <a href="#" class="icon-admm icon-delete">删除</a>
+                    <a href="#" class="icon-admm icon-moveup">上移</a>
+                    <a href="#" class="icon-admm icon-movedown">下移</a>
+                </dd>
+            </dl>
+            <dl class="item-form">
+                <dt class="topic">Banner尺寸：</dt>
+                <dd class="item-operate-2nd">
+                    <input type="text" />
+                    <label>投放的url位置：</label>
+                    <input type="text" />
+                    <a href="#" class="icon-admm icon-add">增加</a>
+                    <a href="#" class="icon-admm icon-delete">删除</a>
+                    <a href="#" class="icon-admm icon-moveup">上移</a>
+                    <a href="#" class="icon-admm icon-movedown">下移</a>
+                </dd>
+            </dl>
+        </div>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/elf/global/merge.js"></script>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/widget/add-del-move.js"></script>
+        <script type="text/javascript">
+        jQuery(function($){
+            new FE.tools.AddDelMove({
+                container:'.form-vertical',
+                afterAdd: function(operateEl){
+                    console.log(operateEl);
+                }
+            });
+            new FE.tools.AddDelMove({
+                container:'.form-vertical',
+                operateEl: '.item-operate-2nd'
+            });
+        });
+        </script>
+    </body>
+</html>

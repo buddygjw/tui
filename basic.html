@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="gbk"/>
+        <title>公共样式测试</title>
+        <link rel="stylesheet" href="http://style.china.alibaba.com/fdevlib/css/fdev-v4/reset/reset-min.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/basic.css" />
+        <!--<link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/module/fixed-right.css" />-->
+        <style type="text/css">
+        .marg {margin:20px;}
+
+/*滚动条样式，仅chrome支持*/        
+/* Turn on a 16x16 scrollbar 
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}*/
+
+/* Turn on single button up on top, and down on bottom 
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+}*/
+
+/* Turn off the down area up on top, and up area on bottom 
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none;
+}*/
+
+/* Place The scroll down button at the bottom 
+::-webkit-scrollbar-button:end:increment {
+    background-image: url(images/scroll_cntrl_dwn.png);
+}*/
+
+/* Place The scroll up button at the up 
+::-webkit-scrollbar-button:start:decrement {
+    background-image: url(images/scroll_cntrl_up.png);
+}*/
+
+/* Top area above thumb and below up button 
+::-webkit-scrollbar-track-piece:vertical:start {
+    background-image: url(images/scroll_gutter_top.png), url(images/scroll_gutter_mid.png);
+    background-repeat: no-repeat, repeat-y;
+}*/
+
+/* Bottom area below thumb and down button 
+::-webkit-scrollbar-track-piece:vertical:end {
+    background-image: url(images/scroll_gutter_btm.png), url(images/scroll_gutter_mid.png);
+    background-repeat: no-repeat, repeat-y;
+    background-position: bottom left, 0 0;
+}*/
+
+/* The thumb itself 
+::-webkit-scrollbar-thumb:vertical {
+    height: 56px;
+    -webkit-border-image: url(images/scroll_thumb.png) 8 0 8 0 stretch stretch;
+    border-width: 8 0 8 0;
+}*/
+        </style>
+    </head>
+    <body>
+        <div class="marg">
+            <input type="text" placeholder="输入框" />
+            <input class="error" type="text" placeholder="出错啦" />
+            <input disabled="disabled" type="text" placeholder="不可用" />
+            <select>
+                <option>下拉框</option>
+            </select>
+            <select class="error">
+                <option>下拉框</option>
+            </select>
+            <select disabled="disabled">
+                <option>下拉框</option>
+            </select>
+        </div>
+        <div class="marg">
+            <textarea placeholder="文本框"></textarea>
+            <textarea class="error" placeholder="出错啦"></textarea>
+            <textarea disabled="disabled" placeholder="不可用"></textarea>
+        </div>
+        <div class="marg">
+            <input type="checkbox" style="background-color:#333;" /> 复选框
+            <input type="radio" /> 单选框
+        </div>
+        <div class="marg">
+            <button type="button" class="btn-basic">按钮测试</button>
+            <button type="button" class="btn-basic btn-blue">确定</button>
+            <a href="#" class="btn-basic btn-blue">A标签</a>
+            <button type="button" disabled="disabled" class="btn-basic btn-blue">不可用</button>
+            <a href="#" class="btn-basic btn-disabled-blue">A不可用</a>
+            <button type="button" class="btn-basic btn-gray">立即查询</button>
+            <a href="#" class="btn-basic btn-gray">A标签</a>
+            <button type="button" disabled="disabled" class="btn-basic btn-gray">不可用</button>
+            <a href="#" class="btn-basic btn-disabled-gray">A不可用</a>
+            
+            <button type="button" class="btn-basic" disabled="disabled">立即查询</button>
+            <a href="#" class="btn-basic btn-disabled">A标签</a>
+        </div>
+        
+        <div class="marg">
+            <a href="#">文字链</a>
+        </div>
+        
+        <div class="marg" style="width:800px;">
+            <ul class="list-divided">
+                <li><span class="d-right">右边内容</span><a href="#">左边的主要内容</a></li>
+                <li><span class="d-right">右边内容</span><a href="#">左边的主要内容</a></li>
+                <li><span class="d-right">右边内容</span><a href="#">左边的主要内容</a></li>
+                <li><span class="d-right">右边内容</span><a href="#">左边的主要内容</a></li>
+            </ul>
+        </div>
+        
+        <div class="marg" style="width:800px;">
+            <table class="table-basic table-no-header">
+                <caption>
+                    <p class="cp-right">2012-09-09 至 2012-09-15</p>
+                    <p class="cp-left"><em class="label">姓名 / 进行中的需求（需求总数）</em></p>
+                </caption>
+                <tbody>
+                    <tr>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                    </tr>
+                    <tr>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                    </tr>
+                    <tr>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                        <td>姓名姓名</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--
+        <div class="marg" style="width:800px;">
+            <table class="table-basic table-simple">
+                <caption><em class="label">姓名</em></caption>
+                <thead>
+                    <tr>
+                        <th>需求详情</th>
+                        <th>需求方</th>
+                        <th>需设计的内容</th>
+                        <th>运营建议完成时间</th>
+                        <th>组长安排完成时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">酒水茶饮专题酒水茶饮专题</a></td>
+                        <td>某某某</td>
+                        <td>题图+Banner1套</td>
+                        <td>2012-09-09</td>
+                        <td>2012-09-09</td>
+                        <td>已完成</td>
+                    </tr>
+                    <tr class="even">
+                        <td><a href="#">酒水茶饮专题酒水茶饮专题</a></td>
+                        <td>某某某</td>
+                        <td>题图+Banner1套</td>
+                        <td>2012-09-09</td>
+                        <td>2012-09-09</td>
+                        <td>已完成</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">酒水茶饮专题酒水茶饮专题</a></td>
+                        <td>某某某</td>
+                        <td>题图+Banner1套</td>
+                        <td>2012-09-09</td>
+                        <td>2012-09-09</td>
+                        <td>已完成</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
+        
+        <div class="marg" style="width:800px;">
+            <table class="table-sub">
+                <caption>
+                    <p class="cp-right">
+                        <span class="txt"><em class="label">审核通过率:</em>1次/共报名8次</span>
+                    </p>
+                    <p class="cp-left">
+                        <span class="txt"><em class="label">offerId:</em>123456789</span>
+                    </p>
+                </caption>
+                <thead>
+                    <tr>
+                        <th>报名时间</th>
+                        <th>活动名称</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2012-09-07</td>
+                        <td>活动名称活动名称活动名称活动名称</td>
+                        <td>已审核</td>
+                        <td>查看未通过原因</td>
+                    </tr>
+                    <tr>
+                        <td>2012-09-07</td>
+                        <td>活动名称活动名称活动名称活动名称</td>
+                        <td>已审核</td>
+                        <td>查看未通过原因</td>
+                    </tr>
+                    <tr>
+                        <td>2012-09-07</td>
+                        <td>活动名称活动名称活动名称活动名称</td>
+                        <td>已审核</td>
+                        <td>查看未通过原因</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="marg" style="width:800px;">
+            <table class="table-info">
+                <caption>原价：<span class="txt">供应总量1444000件</span></caption>
+                <col span="1" class="label" />
+                <tbody>
+                    <tr>
+                        <th>订货量（件）</th>
+                        <td>21-100</td>
+                        <td>21-100</td>
+                        <td>21-100</td>
+                    </tr>
+                    <tr>
+                        <th>订货量（件）</th>
+                        <td>21-100</td>
+                        <td>21-100</td>
+                        <td>21-100</td>
+                    </tr>
+                    <tr>
+                        <th>订货量（件）</th>
+                        <td>21-100</td>
+                        <td>21-100</td>
+                        <td>21-100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="marg" style="width:800px;">
+            <table class="table-info">
+                <caption>原价：<span class="txt">供应总量1444000件</span></caption>
+                <col span="1" class="label" />
+                <col span="1" />
+                <col span="1" class="label" />
+                <tbody>
+                    <tr>
+                        <th>订货量（件）</th>
+                        <td>21-100</td>
+                        <th>21-100</th>
+                        <td>21-100</td>
+                    </tr>
+                    <tr>
+                        <th>订货量（件）</th>
+                        <td>21-100</td>
+                        <th>21-100</th>
+                        <td>21-100</td>
+                    </tr>
+                    <tr>
+                        <th>订货量（件）</th>
+                        <td>21-100</td>
+                        <th>21-100</th>
+                        <td>21-100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="marg">
+            <div class="msg-warning">
+                <p class="summary">抱歉，没有找到符合的相关结果</p>
+                <dl>
+                    <dt>建议你：</dt>
+                    <dd>1.检查筛选条件是否正确</dd>
+                    <dd>2.调整筛选条件</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="marg">
+            <div class="vertical-img" style="width:150px; height:150px; border:1px solid #c00;">
+                <a class="box-img" href="#">
+                    <img src="http://fd.aliued.cn/i/80-80.png" alt="床前明月光"/>
+                </a>
+            </div>
+        </div>
+        <div class="marg">
+            <ul class="crumbs-unorder" style="width:240px;">
+                <li class="current"><span class="inline">活动属性</span></li>
+                <li><span class="inline">专场属性</span></li>
+                <li class="last"><span class="inline">专场设置</span></li>
+            </ul>
+        </div>
+        <div class="marg">
+            <ul class="crumbs-unorder" style="width:240px;">
+                <li><span class="inline">活动属性</span></li>
+                <li class="current"><span class="inline">专场属性</span></li>
+                <li class="last"><span class="inline">专场设置</span></li>
+            </ul>
+        </div>
+        <div class="marg">
+            <ul class="crumbs-unorder" style="width:320px;">
+                <li><span class="inline">活动属性</span></li>
+                <li><span class="inline">专场属性</span></li>
+                <li><span class="inline">专场属性</span></li>
+                <li class="last current"><span class="inline">专场设置</span></li>
+            </ul>
+        </div>
+        
+        <div class="marg" style="width:756px;">
+            <style type="text/css">
+            .list-info { padding-left:12px; line-height:22px;}
+            .list-info li { border-bottom:1px solid #eaeef1; padding:15px 0;}
+            .list-info dt { float:right;}
+            .list-info dt.ht-three { padding-top:38px;}
+            .list-info dt.ht-two { padding-top:16px;}
+            </style>
+            <ul class="list-info">
+                <li>
+                    <dl>
+                        <dt class="ht-three"><a href="#" class="btn-basic btn-blue">普通专场</a></dt>
+                        <dd>a.最通用的专场模板</dd>
+                        <dd>b.有周期时间限制的专场，布点在各频道</dd>
+                        <dd>c.可对供应商资质、诚信、勋章等级、满意率，以及offer类目、交易笔数过滤</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt class="ht-two"><a href="#" class="btn-basic btn-blue">VIP卖家模板</a></dt>
+                        <dd>a.VIP卖家、样品中心卖家招募专用模板</dd>
+                        <dd>b.供应商前台有定制报名页面（无法通用，有合同制作环节）</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <!--<div class="marg" style="background:#300;width:800px;height:20px;">
+            <ul class="fixed-right">
+                <li class="top">顶部</li>
+                <li class="prev">上一个</li>
+                <li class="next">下一个</li>
+            </ul>
+        </div>-->
+        <div class="marg">
+            <div class="fixed-bottom">
+                <div class="decorate">
+                    <span class="arrow-left"></span>
+                    <span class="arrow-right"></span>
+                </div>
+                <div class="fixed-body"></div>
+            </div>
+        </div>
+    </body>
+</html>

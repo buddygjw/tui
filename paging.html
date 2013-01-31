@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gbk" />
+        <title>分页</title>
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/global/merge.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/tui-paging.css" />
+        <style type="text/css">
+        .marg { margin:20px; }
+        </style>
+    </head>
+    <body style="margin:20px;">
+        <style type="text/css">
+        .paging-m {
+            line-height:17px;
+        }
+        .paging-m a {
+            color:#333;
+            padding:0 1px;
+        }
+        .paging-m .current {
+            color:#0074e1;
+            font-weight:bold;
+            padding:0 1px;
+        }
+        .paging-m .prev, .paging-m .next {
+            background:url("http://img.china.alibaba.com/cms/upload/2013/108/086/680801_133354742.png") repeat-x;
+            diaplay:inline-block;
+            border:1px solid #aeaeae;
+            border-radius:2px;
+            height:15px;
+            line-height:15px;
+            padding:0 10px;
+        }
+        .paging-m .prev:hover, .paging-m .next:hover {
+            background-position:0 -30px;
+        }
+        .paging-m .prev:active, .paging-m .next:active {
+            background-position:0 -60px;
+        }
+        .paging-m .prev-disabled, .paging-m .prev-disabled:hover, 
+        .paging-m .prev-disabled:active, .paging-m .next-disabled, 
+        .paging-m .next-disabled:hover, .paging-m .next-disabled:active {
+            background-position:0 -90px;
+            cursor:default;
+        }
+        .paging-m .prev .arrow, .paging-m .next .arrow{
+            font-size:0;
+            line-height:0;
+            vertical-align:4px;
+            border-top:5px solid rgba(255,255,255,0);
+            border-bottom:5px solid rgba(255,255,255,0);
+        }
+        .paging-m .prev .arrow {
+            border-right:5px solid #333;
+        }
+        .paging-m .next .arrow {
+            border-left:5px solid #333;
+        }
+        .paging-m .prev-disabled .arrow {
+            border-right:5px solid #a8a8a8;
+        }
+        .paging-m .next-disabled .arrow {
+            border-left:5px solid #a8a8a8;
+        }
+        </style>
+        <div class="marg">
+            <div class="paging-m">
+                <a href="#" class="prev"><i class="arrow">上一页</i></a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <span class="current">5</span>
+                <a href="#">6</a>
+                <span class="omit">...</span>
+                <a href="#" class="next"><i class="arrow">下一页</i></a>
+            </div>
+        </div>
+        <div class="marg">
+            <div class="paging-m">
+                <span class="prev prev-disabled"><i class="arrow">上一页</i></span>
+                <a href="#">1</a>
+                <span class="current">2</span>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#" class="next"><i class="arrow">下一页</i></a>
+            </div>
+        </div>
+        <div class="marg">
+            <div class="paging-m">
+                <span class="prev prev-disabled"><i class="arrow">上一页</i></span>
+                <span class="current">1</span>
+                <span class="next next-disabled"><i class="arrow">下一页</i></span>
+            </div>
+        </div>
+        <div class="marg">
+            <div class="paging-s">
+                <span class="description">共467个结果</span>
+                <span class="pnum">5/100</span>
+                <a href="#" title="上一页" class="btn-basic btn-gray prev"><span></span></a><a href="#" class="btn-basic btn-gray next">下一页</a>
+            </div>
+        </div>
+        <div class="marg">
+            <!-- 不可点击状态 -->
+            <div class="paging-s">
+                <span class="description">共467个结果</span>
+                <span class="pnum">5/100</span>
+                <!-- 试用“btn-disabled-gray”class名表示不可点击 -->
+                <a href="#" class="btn-basic btn-disabled-gray prev"><span></span></a><a href="#" class="btn-basic btn-disabled-gray next">下一页</a>
+            </div>
+        </div>
+        <div class="marg" style="overflow:hidden;">
+            <ul class="paging-t fd-clr">
+                <li class="pagination">
+                    <span class="prev-disabled">上一页</span>
+                    <a href="#">1</a>
+                    <span class="current">2</span>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <span class="omit">...</span>
+                    <a href="#" class="next">下一页</a>
+                </li>
+                <li>共<em>100</em>页 到<input class="pnum" maxlength="4" autocomplete="off" type="text">页</li>
+                <li><button type="button" class="btn-basic btn-gray">确定</button></li>
+            </ul>
+        </div>
+        <div class="marg" style="overflow:hidden;">
+            <ul class="paging-t fd-clr">
+                <li class="pagination">
+                    <a href="#" class="prev">上一页</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <span class="current">6</span>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <span class="omit">...</span>
+                    <a href="#" class="next">下一页</a>
+                </li>
+                <li>共<em>100</em>页 到<input class="pnum" maxlength="4" autocomplete="off" type="text">页</li>
+                <li><button type="button" class="btn-basic btn-gray">确定</button></li>
+            </ul>
+        </div>
+        <div class="marg" style="overflow:hidden;">
+            <ul class="paging-t fd-clr">
+                <li class="pagination">
+                    <span class="prev-disabled">上一页</span>
+                    <span class="current">1</span>
+                    <span class="next-disabled">下一页</span>
+                </li>
+                <li>共<em>1</em>页 到<input class="pnum" maxlength="4" autocomplete="off" type="text">页</li>
+                <li><button type="button" class="btn-basic btn-gray">确定</button></li>
+            </ul>
+        </div>
+    </body>
+</html>

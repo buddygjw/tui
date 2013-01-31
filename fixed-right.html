@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gbk" />
+        <title>右浮窗</title>
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/global/merge.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/module/totop.css" />
+        <style type="text/css">
+        .items { width:600px; background:#090; height:300px; margin-bottom:12px; font-size:20px; line-height:30px; color:#fff; font-weight:blod;}
+        </style>
+    </head>
+    <body style="height:1200px;">
+        <div class="marg" style="background:#300;width:800px;height:20px;">
+            <ul class="fixed-right">
+                <li class="top">顶部</li>
+                <li class="prev">上一个</li>
+                <li class="next">下一个</li>
+            </ul>
+        </div>
+        <div class="items">11111111111111</div>
+        <div class="items">22222222222222222</div>
+        <div class="items">333333333333333</div>
+        <div class="items">44444444444444444</div>
+        <div class="items">55555555555555555555</div>
+        <div class="items">6666666666666</div>
+        <div class="items">777777777777777777</div>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/elf/global/merge.js"></script>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/widget/fixed-right.js"></script>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/elf/module/totop.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                /*FE.tools.fixedRight('.fixed-right', {
+                    offset:20,
+                    top:20
+                });*/
+                FE.tools.toTop('.fixed-right', {
+                    fixed: {offset:20, top:20}
+                });
+            });
+        </script>
+    </body>
+</html>

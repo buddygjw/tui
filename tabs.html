@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gbk" />
+        <title>tab切换</title>
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/elf/global/merge.css" />
+        <link rel="stylesheet" href="http://style.china.alibaba.com/app/tools/css/widget/tabs.css" />
+        
+    </head>
+    <body style="margin:20px;">
+        <ul class="tabs-a-topics">
+            <li class="current"><a href="#">页面</a></li>
+            <li><a href="#">布局</a></li>
+            <li><a href="#">模版</a></li>
+            <li><a href="#">组件</a></li>
+            <li><a href="#">控件</a></li>
+        </ul>
+        <br style="height:50px;" />
+        <div class="tui-tabs-header">
+            <h4 class="title">标题内容</h4>
+            <div class="description"><a href="#">连接</a></div>
+            <ul class="list-tabs-t">
+                <li class="current"><a href="#">页面</a></li>
+                <li><a href="#">布局</a></li>
+                <li><a href="#">模版</a></li>
+                <li><a href="#">组件</a></li>
+                <li><a href="#">控件</a></li>
+                <li>控件</li>
+            </ul>
+        </div>
+        <br style="height:50px;" />
+        <div id="demo-tabs-1">
+            <div class="tui-tabs-header">
+                <h4 class="title">标题内容</h4>
+                <div class="description"><a href="#">连接</a></div>
+                <ul class="list-tabs-t">
+                    <li class="current"><a href="#">页面</a></li>
+                    <li><a href="#">布局</a></li>
+                    <li><a href="#">模版</a></li>
+                    <li><a href="#">组件</a></li>
+                    <li><a href="#">控件</a></li>
+                </ul>
+            </div>
+            <div class="tab-a-box">页面内容</div>
+            <div class="tab-a-box">布局内容</div>
+            <div class="tab-a-box">模版内容</div>
+            <div class="tab-a-box">组件内容</div>
+            <div class="tab-a-box">控件内容</div>
+        </div>
+        <script type="text/javascript" src="http://style.china.alibaba.com/app/tools/js/dcms/global/box-merge-v2.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                $.use('ui-tabs', function(){
+                    $('#demo-tabs-1').tabs({
+                        isAutoPlay: false,
+                        event: 'click',
+                        titleSelector: '.list-tabs-t li',
+                        boxSelector: '.tab-a-box'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
